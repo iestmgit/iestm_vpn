@@ -2,15 +2,16 @@
   "manifest_version": 3,
   "name": "VPN Proxy - Free Servers",
   "version": "1.0.0",
-  "description": "VPN proxy with free servers list",
+  "description": "VPN proxy with free servers from online sources",
   "permissions": [
     "proxy",
     "storage",
-    "webRequest",
-    "webRequestAuthProvider"
+    "webRequest"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "<all_urls>",
+    "https://cdn.jsdelivr.net/*",
+    "https://raw.githubusercontent.com/*"
   ],
   "background": {
     "service_worker": "background.js"
