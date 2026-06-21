@@ -1,0 +1,68 @@
+{
+  "servers": [
+    {
+      "id": 1,
+      "name": "USA - New York",
+      "host": "us-ny.proxy.example.com",
+      "port": 8080,
+      "scheme": "http",
+      "country": "US"
+    },
+    {
+      "id": 2,
+      "name": "UK - London",
+      "host": "uk-london.proxy.example.com",
+      "port": 8080,
+      "scheme": "http",
+      "country": "UK"
+    },
+    {
+      "id": 3,
+      "name": "Germany - Frankfurt",
+      "host": "de-frankfurt.proxy.example.com",
+      "port": 8080,
+      "scheme": "http",
+      "country": "DE"
+    },
+    {
+      "id": 4,
+      "name": "Netherlands - Amsterdam",
+      "host": "nl-amsterdam.proxy.example.com",
+      "port": 8080,
+      "scheme": "http",
+      "country": "NL"
+    },
+    {
+      "id": 5,
+      "name": "Canada - Toronto",
+      "host": "ca-toronto.proxy.example.com",
+      "port": 8080,
+      "scheme": "http",
+      "country": "CA"
+    },
+    {
+      "id": 6,
+      "name": "Singapore",
+      "host": "sg-singapore.proxy.example.com",
+      "port": 8080,
+      "scheme": "http",
+      "country": "SG"
+    },
+    {
+      "id": 7,
+      "name": "Japan - Tokyo",
+      "host": "jp-tokyo.proxy.example.com",
+      "port": 8080,
+      "scheme": "http",
+      "country": "JP"
+    },
+    {
+      "id": 8,
+      "name": "Australia - Sydney",
+      "host": "au-sydney.proxy.example.com",
+      "port": 8080,
+      "scheme": "http",
+      "country": "AU"
+    }
+  ]
+}
