@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🛡️ VPN Proxy</h1>
+      <div class="status-container">
+        <span id="statusText">غیرفعال</span>
+        <span id="statusDot" class="status-dot disconnected"></span>
+      </div>
+    </div>
+
+    <div class="server-section">
+      <label for="serverSelect">انتخاب سرور:</label>
+      <select id="serverSelect">
+        <option value="">--- انتخاب کنید ---</option>
+      </select>
+    </div>
+
+    <div class="server-info" id="serverInfo" style="display: none;">
+      <div class="info-row">
+        <span class="label">🌍 کشور:</span>
+        <span id="serverCountry">-</span>
+      </div>
+      <div class="info-row">
+        <span class="label">📍 آدرس:</span>
+        <span id="serverHost">-</span>
+      </div>
+    </div>
+
+    <button id="toggleButton" class="btn-connect">اتصال</button>
+    <button id="refreshButton" class="btn-refresh">🔄 به‌روزرسانی سرورها</button>
+
+    <div class="footer">
+      <span>وضعیت: <span id="connectionStatus">قطع</span></span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
