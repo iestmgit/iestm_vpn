@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html dir="rtl">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
   <div class="container">
+    <!-- هدر -->
     <div class="header">
       <h1>🛡️ VPN Proxy</h1>
       <div class="status-container">
@@ -14,13 +15,18 @@
       </div>
     </div>
 
+    <!-- انتخاب سرور -->
     <div class="server-section">
-      <label for="serverSelect">انتخاب سرور:</label>
-      <select id="serverSelect">
-        <option value="">--- انتخاب کنید ---</option>
-      </select>
+      <label for="serverSelect">🌍 انتخاب سرور:</label>
+      <div class="select-wrapper">
+        <select id="serverSelect">
+          <option value="">--- در حال بارگذاری ---</option>
+        </select>
+        <span class="server-count" id="serverCount"></span>
+      </div>
     </div>
 
+    <!-- اطلاعات سرور -->
     <div class="server-info" id="serverInfo" style="display: none;">
       <div class="info-row">
         <span class="label">🌍 کشور:</span>
@@ -30,13 +36,24 @@
         <span class="label">📍 آدرس:</span>
         <span id="serverHost">-</span>
       </div>
+      <div class="info-row">
+        <span class="label">⚡ تاخیر:</span>
+        <span id="serverLatency">-</span>
+      </div>
     </div>
 
-    <button id="toggleButton" class="btn-connect">اتصال</button>
-    <button id="refreshButton" class="btn-refresh">🔄 به‌روزرسانی سرورها</button>
+    <!-- دکمه‌ها -->
+    <button id="toggleButton" class="btn-connect disconnected">🔗 اتصال</button>
+    
+    <div class="button-row">
+      <button id="refreshButton" class="btn-secondary">🔄 به‌روزرسانی</button>
+      <button id="testButton" class="btn-secondary">⚡ تست سرور</button>
+    </div>
 
+    <!-- وضعیت -->
     <div class="footer">
       <span>وضعیت: <span id="connectionStatus">قطع</span></span>
+      <span class="server-time" id="serverTime"></span>
     </div>
   </div>
 
