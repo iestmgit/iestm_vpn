@@ -5,8 +5,8 @@
 }
 
 body {
-  width: 350px;
-  min-height: 400px;
+  width: 380px;
+  min-height: 450px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 16px;
@@ -19,6 +19,7 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* هدر */
 .header {
   display: flex;
   justify-content: space-between;
@@ -60,6 +61,18 @@ body {
   box-shadow: 0 0 10px rgba(244, 67, 54, 0.3);
 }
 
+.status-dot.loading {
+  background-color: #ff9800;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* انتخاب سرور */
 .server-section {
   margin-bottom: 16px;
 }
@@ -72,6 +85,10 @@ body {
   margin-bottom: 6px;
 }
 
+.select-wrapper {
+  position: relative;
+}
+
 #serverSelect {
   width: 100%;
   padding: 10px 12px;
@@ -81,6 +98,8 @@ body {
   background: white;
   cursor: pointer;
   transition: border-color 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 #serverSelect:focus {
@@ -88,6 +107,24 @@ body {
   border-color: #667eea;
 }
 
+#serverSelect:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.server-count {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: #999;
+  background: #f5f5f5;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* اطلاعات سرور */
 .server-info {
   background: #f8f9fa;
   border-radius: 8px;
@@ -104,8 +141,15 @@ body {
 
 .info-row .label {
   color: #888;
+  font-weight: 500;
 }
 
+.info-row span:last-child {
+  color: #333;
+  font-weight: 500;
+}
+
+/* دکمه‌ها */
 .btn-connect {
   width: 100%;
   padding: 12px;
@@ -116,60 +160,80 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   color: white;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   margin-bottom: 10px;
-}
-
-.btn-connect:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-}
-
-.btn-connect:active {
-  transform: translateY(0);
 }
 
 .btn-connect.disconnected {
   background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
 }
 
+.btn-connect.disconnected:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+}
+
 .btn-connect.connected {
   background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
 }
 
-.btn-refresh {
-  width: 100%;
-  padding: 10px;
+.btn-connect.connected:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(244, 67, 54, 0.4);
+}
+
+.btn-connect:active {
+  transform: translateY(0);
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.btn-secondary {
+  flex: 1;
+  padding: 8px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   background: white;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: #555;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.btn-refresh:hover {
+.btn-secondary:hover {
   background: #f5f5f5;
   border-color: #667eea;
 }
 
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* فوتر */
 .footer {
-  margin-top: 15px;
+  margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid #f0f0f0;
-  text-align: center;
-  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
   color: #888;
 }
 
-.footer span {
+.footer span:first-child {
+  font-weight: 500;
+}
+
+.footer span:first-child span {
   font-weight: 600;
   color: #333;
 }
 
-/* استایل برای زمانی که سروری انتخاب نشده */
-#serverSelect option:first-child {
-  color: #999;
+.server-time {
+  font-size: 11px;
+  color: #aaa;
 }
